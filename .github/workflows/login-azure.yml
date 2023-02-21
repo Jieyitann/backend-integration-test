@@ -7,9 +7,12 @@ jobs:
   build:
     runs-on: self-hosted
     steps:            
-    - name: "Login and do something"
+    - name: "Login to Azure"
+      uses: Azure/login@v1
+    - name: "Upload Static Content to Storage"
       uses: azure/CLI@v1
       with:
-        script: |
-          nslookup cosmosdb-tcs-devizdb-core.documents.azure.com
+        azcliversion: 2.24.2
+        inlineScript: |
+                    az group list
         
