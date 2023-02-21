@@ -16,6 +16,7 @@ jobs:
           az login --identity
     
     - name: "Call CosmosDB"
+      uses: actions/checkout@v2
       with:
         command: |
           nslookup cosmosdb-tcs-devizdb-core.documents.azure.com
