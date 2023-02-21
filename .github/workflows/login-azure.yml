@@ -12,7 +12,7 @@ jobs:
       with:
         azcliversion: 2.24.2
     - name: "Call CosmosDB"
-      uses: azure/actions/ssh@main
+      uses: actions/checkout@v3
       with:
         run: |
           nslookup cosmosdb-tcs-devizdb-core.documents.azure.com
