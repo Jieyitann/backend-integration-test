@@ -18,6 +18,14 @@ jobs:
       with:
         run: |
           nslookup cosmosdb-tcs-devizdb-core.documents.azure.com
+    - name: setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10' # install the python version needed
+
+    - name: install python packages
+      run: |
+        python -m pip install --upgrade pip
     - name: "Get items in cosmosdb"
       run: |
         python get_all_items.py
