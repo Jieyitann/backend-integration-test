@@ -6,17 +6,20 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-    steps:            
+    steps:
+    - uses: actions/checkout@v2
+    
     - name: "Login Azure"
       uses: azure/CLI@v1
       with:
         azcliversion: 2.24.2
         inlineScript: |
           az login --identity
+    
     - name: "Call CosmosDB"
-      uses: actions/checkout@v3
+      uses: azure/actions/ssh@master
       with:
-        run: |
+        command: |
           nslookup cosmosdb-tcs-devizdb-core.documents.azure.com
     - name: setup python
       uses: actions/setup-python@v4
