@@ -7,12 +7,10 @@ jobs:
   build:
     runs-on: self-hosted
     steps:            
-    - name: "Login to Azure"
-      uses: Azure/login@v1
-    - name: "Upload Static Content to Storage"
+    - name: "Login and do something"
       uses: azure/CLI@v1
       with:
         azcliversion: 2.24.2
         inlineScript: |
-                    az group list
-        
+          az login --identity
+          az group list   
