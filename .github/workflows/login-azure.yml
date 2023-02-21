@@ -18,7 +18,7 @@ jobs:
           az login --identity
     
     - name: "Call CosmosDB"
-      uses: azure/actions/ssh@master
+      uses: azure/actions/ssh@main
       with:
         command: |
           nslookup cosmosdb-tcs-devizdb-core.documents.azure.com
