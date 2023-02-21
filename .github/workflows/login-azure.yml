@@ -14,5 +14,6 @@ jobs:
     - name: "Call CosmosDB"
       uses: actions/checkout@v3
       with:
-        run: |
+        azcliversion: 2.24.2
+        inlineScript: |
           nslookup cosmosdb-tcs-devizdb-core.documents.azure.com
