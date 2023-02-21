@@ -7,10 +7,12 @@ jobs:
   build:
     runs-on: self-hosted
     steps:            
-    - name: "Login and do something"
+    - name: "Login Azure"
       uses: azure/CLI@v1
       with:
         azcliversion: 2.24.2
-        inlineScript: |
-          az login --identity
-          az group list   
+    - name: "Call CosmosDB"
+      uses: azure/actions/ssh@master
+      with:
+        command: |
+          nslookup cosmosdb-tcs-devizdb-core.documents.azure.com
