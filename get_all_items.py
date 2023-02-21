@@ -3,8 +3,8 @@ from azure.identity import DefaultAzureCredential
 from azure.cosmos import CosmosClient
 
 # Set the endpoint and key for your Cosmos DB account
-ENDPOINT = ${{secrets.COSMOS_ENDPOINT}}
-KEY = ${{secrets.COSMOS_KEY}}
+COSMOS_ENDPOINT = os.environ.get('COSMOS_ENDPOINT')
+COSMOS_KEY = os.environ.get('COSMOS_KEY')
 
 # Set the database and container you want to use
 DATABASE_ID = 'integration-test-db'
