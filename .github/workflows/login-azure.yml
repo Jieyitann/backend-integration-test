@@ -14,5 +14,5 @@ jobs:
     - name: "Call CosmosDB"
       uses: azure/actions/ssh@main
       with:
-        command: |
+        run: |
           nslookup cosmosdb-tcs-devizdb-core.documents.azure.com
