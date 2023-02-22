@@ -10,7 +10,6 @@ key = os.environ.get('COSMOS_KEY')
 database = 'integration-test-db'
 container = 'integration-test-container'
 
-
 client = CosmosClient(url = url, credential=key)
 database = client.get_database_client(database)
 connection = database.get_container_client(container)
