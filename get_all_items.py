@@ -3,24 +3,21 @@ from azure.identity import DefaultAzureCredential
 from azure.cosmos import CosmosClient
 
 # Set the endpoint and key for your Cosmos DB account
-ENDPOINT = os.environ.get('COSMOS_ENDPOINT')
-KEY = os.environ.get('COSMOS_KEY')
+url = os.environ.get('COSMOS_ENDPOINT')
+key = os.environ.get('COSMOS_KEY')
 
 # Set the database and container you want to use
-DATABASE_ID = 'integration-test-db'
-CONTAINER_ID = 'integration-test-container'
+database = 'integration-test-db'
+container = 'integration-test-container'
 
-# Create a Cosmos DB client with the endpoint and key
-credential = DefaultAzureCredential()
-client = CosmosClient(endpoint=ENDPOINT, credential=credential)
 
-# Get a reference to the database and container
-database = client.get_database_client(DATABASE_ID)
-container = database.get_container_client(CONTAINER_ID)
+client = CosmosClient(url = url, credential=key, connection_verify=False)
+database = client.get_database_client(database)
+connection = database.get_container_client(container)
 
 # Query the container for all items
 query = "SELECT * FROM c"
-items = list(container.query_items(query=query))
+items = list(container.query_items(query=query, enable_cross_partition_query=True))
 
 # Print the results
 for item in items:
