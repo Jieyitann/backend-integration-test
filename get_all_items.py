@@ -7,6 +7,9 @@ from azure.cosmos import CosmosClient
 url = os.environ.get('COSMOS_ENDPOINT')
 key = os.environ.get('COSMOS_KEY')
 
+print(url[0:10])
+print(key([0:10])
+
 # Set the database and container you want to use
 database = 'cosmosdb-tcs-devizdb-maindb'
 container = 'frontend'
