@@ -7,8 +7,8 @@ url = os.environ.get('COSMOS_ENDPOINT')
 key = os.environ.get('COSMOS_KEY')
 
 # Set the database and container you want to use
-database = 'cosmosdb-tcs-devizdb-maindb'
-container = 'frontend'
+database = 'integration-test-db'
+container = 'integration-test-container'
 
 
 client = CosmosClient(url = url, credential=key)
