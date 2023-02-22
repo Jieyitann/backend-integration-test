@@ -1,4 +1,3 @@
-#
 import os
 from azure.identity import DefaultAzureCredential
 from azure.cosmos import CosmosClient
@@ -6,9 +5,6 @@ from azure.cosmos import CosmosClient
 # Set the endpoint and key for your Cosmos DB account
 url = os.environ.get('COSMOS_ENDPOINT')
 key = os.environ.get('COSMOS_KEY')
-
-print(url)
-print(key)
 
 # Set the database and container you want to use
 database = 'cosmosdb-tcs-devizdb-maindb'
