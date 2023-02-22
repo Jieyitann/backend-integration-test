@@ -11,7 +11,7 @@ database = 'cosmosdb-tcs-devizdb-maindb'
 container = 'frontend'
 
 
-client = CosmosClient(url = url, credential=key, connection_verify=False)
+client = CosmosClient(url = url, credential=key)
 database = client.get_database_client(database)
 connection = database.get_container_client(container)
 
