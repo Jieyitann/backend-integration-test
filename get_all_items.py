@@ -16,7 +16,7 @@ connection = database.get_container_client(container)
 
 # Query the container for all items
 query = "SELECT * FROM c"
-items = list(container.query_items(query=query, enable_cross_partition_query=True))
+items = list(connection.query_items(query=query, enable_cross_partition_query=True))
 
 # Print the results
 for item in items:
